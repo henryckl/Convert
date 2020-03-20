@@ -1,38 +1,26 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
-//import { useStaticQuery, graphql } from "gatsby"
+import { createGlobalStyle } from "styled-components"
+import { Main } from "./styles"
 
-import "./layout.css"
+const GlobalStyle = createGlobalStyle`
+  @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+  html,
+  body,
+  html * {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+`
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
-
   return (
     <>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-      </div>
+      <Main>{children}</Main>
+      <GlobalStyle theme="purple" />
     </>
   )
 }
