@@ -1,6 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { createGlobalStyle } from "styled-components"
+
+import Header from "../Header"
+
 import { Main } from "./styles"
 
 const GlobalStyle = createGlobalStyle`
@@ -19,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
 const Layout = ({ children }) => {
   return (
     <>
+      <Header />
       <Main>{children}</Main>
       <GlobalStyle theme="purple" />
     </>
