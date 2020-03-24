@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Container, Panel } from "./styles"
+import { Container, Panel, PanelForm, DisplayValues } from "./styles"
 
 function BinaryToDecimal() {
   const [binaryNumber, setBinary] = useState("")
@@ -36,18 +36,30 @@ function BinaryToDecimal() {
   return (
     <Container>
       <Panel>
-        <label htmlFor="from">From</label>
-        <input type="text" defaultValue="Binary" />
+        <PanelForm>
+          <label htmlFor="from">From</label>
+          <select name="from">
+            <option value="Binary">Binary</option>
+          </select>
+        </PanelForm>
+        <PanelForm>
+          <label htmlFor="to">To</label>
+          <select name="to">
+            <option value="Decimal">Decimal</option>
+          </select>
+        </PanelForm>
       </Panel>
-      <label htmlFor="binary">Binary</label>
-      <input
-        type="name"
-        value={binaryNumber}
-        name="binary"
-        onChange={binaryHandle}
-      />
-      <label htmlFor="decimal">Decimal</label>
-      <input type="name" defaultValue={decimalNumber} name="decimal" />
+      <DisplayValues>
+        <label htmlFor="binary">Binary</label>
+        <input
+          type="name"
+          value={binaryNumber}
+          name="binary"
+          onChange={binaryHandle}
+        />
+        <label htmlFor="decimal">Decimal</label>
+        <input type="name" defaultValue={decimalNumber} name="decimal" />
+      </DisplayValues>
     </Container>
   )
 }
